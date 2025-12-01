@@ -66,7 +66,22 @@
 
     <label for="masters"># at Masters or Above</label>
     <input id="masters" type="number" min="0" step="1">
-    
+      
+    <!-- "Square" / box for Passers and Non-Passers -->
+  <div class="card" style="margin-top: 1rem; background: #f9f9f9;">
+    <h3>Summary</h3>
+
+    <label for="passers">Passers (Approaches + Meets + Masters)</label>
+    <input id="passers" type="number" readonly>
+
+    <label for="nonPassers">Non-passers (Tested - Passers)</label>
+    <input id="nonPassers" type="number" readonly>
+  </div>
+
+  <button onclick="calculateDomain1()">Calculate</button>
+
+  <div id="result"></div>
+  </div>
     <button onclick="calculateDomain1()">Calculate</button>
 
     <div id="result"></div>
