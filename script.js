@@ -1,0 +1,32 @@
+function calculateDomain1() {
+  const testedInput = document.getElementById("tested");
+  const approachesInput = document.getElementById("approaches");
+  const resultDiv = document.getElementById("result");
+
+  const tested = Number(testedInput.value);
+  const approaches = Number(approachesInput.value);
+
+  if (!tested || tested <= 0) {
+    resultDiv.textContent = "Please enter a valid number of students tested.";
+    return;
+  }
+
+  if (approaches < 0 || approaches > tested) {
+    resultDiv.textContent = "Approaches count must be between 0 and total tested.";
+    return;
+  }
+
+  const pctApproaches = (approaches / tested) * 100;
+
+  // TODO: Replace this with your real TEA Domain 1 logic.
+  // For now, this is just a fake example mapping to an A–F label.
+  let rating;
+  if (pctApproaches >= 90) rating = "A (example)";
+  else if (pctApproaches >= 80) rating = "B (example)";
+  else if (pctApproaches >= 70) rating = "C (example)";
+  else if (pctApproaches >= 60) rating = "D (example)";
+  else rating = "F (example)";
+
+  resultDiv.textContent =
+    `Approaches%: ${pctApproaches.toFixed(1)}%. Estimated rating (example scale): ${rating}`;
+}
