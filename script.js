@@ -30,5 +30,5 @@ function calculateDomain1() {
   else rating = "F (example)";
 
   resultDiv.textContent =
-    `Approaches%: ${pctAverage.toFixed(1)}%. Estimated rating (example scale): ${rating}`;
+    `Average%: ${pctAverage.toFixed(1)}%. Estimated rating (example scale): ${rating}`;
 }
