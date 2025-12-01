@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Texas Accountability Estimator (Prototype)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.5;
+    }
+    h1, h2 {
+      margin-bottom: 0.25rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    input {
+      padding: 0.25rem;
+      width: 100%;
+      max-width: 200px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    small {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Texas Accountability Estimator</h1>
+  <p><small>
+    Prototype tool using publicly available TEA accountability documentation. 
+    Not official, and not endorsed by TEA.
+  </small></p>
+
+  <div class="card">
+    <h2>Simple Domain 1 Example</h2>
+    <p>Enter counts for one campus (example – you’ll replace this logic with real TEA formulas).</p>
+
+    <label for="tested">Total students tested</label>
+    <input id="tested" type="number" min="0" step="1">
+
+    <label for="approaches"># at Approaches or Above</label>
+    <input id="approaches" type="number" min="0" step="1">
+
+    <button onclick="calculateDomain1()">Calculate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
