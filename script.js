@@ -18,7 +18,7 @@ function calculateDomain1() {
     return;
   }
 
-  const pctAverage = (((approaches + meets + masters) / tested)/3) * 100;
+  const (pctAverage = (((approaches + meets + masters) / tested)/3) * 100);
 
   // TODO: Replace this with your real TEA Domain 1 logic.
   // For now, this is just a fake example mapping to an A–F label.
