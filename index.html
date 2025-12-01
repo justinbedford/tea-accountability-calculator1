@@ -41,6 +41,22 @@
     }
     small {
       color: #555;
+
+    .flex-container {
+    display: flex;
+    gap: 2rem;           /* space between left & right */
+    align-items: flex-start;
+    }
+
+  .left-box, .right-box {
+  flex: 1;             /* makes them share space evenly */
+    }
+
+  .right-box {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
     }
   </style>
 </head>
@@ -51,42 +67,41 @@
     Not official, and not endorsed by TEA.
   </small></p>
 
-  <div class="card">
-    <h2>Simple Domain 1 Example</h2>
-    <p>Enter counts for one teacher.</p>
+<div class="card">
+  <h2>Simple Domain 1 Example</h2>
+  <p>Enter counts for one campus.</p>
 
-    <label for="tested">Total students tested</label>
-    <input id="tested" type="number" min="0" step="1">
+  <div class="flex-container">
 
-    <label for="approaches"># at Approaches or Above</label>
-    <input id="approaches" type="number" min="0" step="1">
+    <!-- LEFT SIDE: Inputs -->
+    <div class="left-box">
+      <label for="tested">Total students tested</label>
+      <input id="tested" type="number" min="0" step="1">
 
-    <label for="meets"># at Meets or Above</label>
-    <input id="meets" type="number" min="0" step="1">
+      <label for="approaches"># at Approaches</label>
+      <input id="approaches" type="number" min="0" step="1">
 
-    <label for="masters"># at Masters or Above</label>
-    <input id="masters" type="number" min="0" step="1">
-      
-    <!-- "Square" / box for Passers and Non-Passers -->
-  <div class="card" style="margin-top: 1rem; background: #f9f9f9;">
-    <h3>Summary</h3>
+      <label for="meets"># at Meets</label>
+      <input id="meets" type="number" min="0" step="1">
 
-    <label for="passers">Passers (Approaches + Meets + Masters)</label>
-    <input id="passers" type="number" readonly>
+      <label for="masters"># at Masters</label>
+      <input id="masters" type="number" min="0" step="1">
+    </div>
 
-    <label for="nonPassers">Non-passers (Tested - Passers)</label>
-    <input id="nonPassers" type="number" readonly>
+    <!-- RIGHT SIDE: Summary box -->
+    <div class="right-box">
+      <h3>Summary</h3>
+
+      <label for="passers">Passers</label>
+      <input id="passers" type="number" readonly>
+
+      <label for="nonPassers">Non-passers</label>
+      <input id="nonPassers" type="number" readonly>
+    </div>
+
   </div>
 
   <button onclick="calculateDomain1()">Calculate</button>
-
   <div id="result"></div>
-  </div>
-    <button onclick="calculateDomain1()">Calculate</button>
+</div>
 
-    <div id="result"></div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
