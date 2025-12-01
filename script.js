@@ -1,6 +1,8 @@
 function calculateDomain1() {
   const testedInput = document.getElementById("tested");
   const approachesInput = document.getElementById("approaches");
+  const meetsInput = document.getElementById("meets");
+  const mastersInput = document.getElementById("masters"); 
   const resultDiv = document.getElementById("result");
 
   const tested = Number(testedInput.value);
@@ -16,17 +18,17 @@ function calculateDomain1() {
     return;
   }
 
-  const pctApproaches = (approaches / tested) * 100;
+  const pctAverage = (((approaches + meets + masters) / tested)/3) * 100;
 
   // TODO: Replace this with your real TEA Domain 1 logic.
   // For now, this is just a fake example mapping to an A–F label.
   let rating;
-  if (pctApproaches >= 90) rating = "A (example)";
-  else if (pctApproaches >= 80) rating = "B (example)";
-  else if (pctApproaches >= 70) rating = "C (example)";
-  else if (pctApproaches >= 60) rating = "D (example)";
+  if (pctAverage >= 90) rating = "A (example)";
+  else if (pctAverage >= 80) rating = "B (example)";
+  else if (pctAverage >= 70) rating = "C (example)";
+  else if (pctAverage >= 60) rating = "D (example)";
   else rating = "F (example)";
 
   resultDiv.textContent =
-    `Approaches%: ${pctApproaches.toFixed(1)}%. Estimated rating (example scale): ${rating}`;
+    `Approaches%: ${pctAverage.toFixed(1)}%. Estimated rating (example scale): ${rating}`;
 }
